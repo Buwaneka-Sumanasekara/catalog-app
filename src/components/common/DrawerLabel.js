@@ -16,12 +16,12 @@ const styles = StyleSheet.create({
 })
 
 const DrawerLabel = (props) => {
-    const {rightElement:RightElement,title}=props;
+    const {rightElement:RightElement,title,leftIcon}=props;
     return (
         <List.Item
         title={title}
         style={styles.containerStyle}
-        left={props => <List.Icon {...props} icon="camera" />}
+        left={props => <List.Icon {...props} icon={leftIcon} />}
         right={RightElement?props=><RightElement {...props}/>:undefined}
         />
     )

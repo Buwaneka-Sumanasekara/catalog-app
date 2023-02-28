@@ -40,6 +40,7 @@ const DrawerStack = ()=> {
                 drawerLabel:(props)=>(
                     <DrawerLabel 
                         title={ScreenNames.HomeScreen.title} {...props}
+                        leftIcon={ScreenNames.HomeScreen.icon}
                     /> 
                 ),
               }}  
@@ -53,6 +54,7 @@ const DrawerStack = ()=> {
                     <DrawerLabel 
                         rightElement={(props)=><FavoriteCount {...props}/>} 
                         title={ScreenNames.FavoritesScreen.title} {...props}
+                        leftIcon={ScreenNames.FavoritesScreen.icon}
                     /> 
                 )
               }} 

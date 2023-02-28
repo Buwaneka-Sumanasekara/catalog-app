@@ -9,22 +9,27 @@ export default {
     },
     FavoritesScreen:{
         key:"FavoritesScreen",
-        title:"Favorite"
+        title:"Favorite",
+        icon:"account-heart-outline"
     },
     HomeScreen:{
         key:"HomeScreen",
-        title:"Home"
+        title:"Home",
+        icon:"home-outline"
     },
     HomeAiringScreen:{
         key:"HomeAiringScreen",
-        title:"Airing"
+        title:"Airing",
+        icon:"navigation-outline"
     },
     HomeCompleteScreen:{
         key:"HomeCompleteScreen",
-        title:"Complete"
+        title:"Complete",
+        icon:"timer-sand-complete"
     },
     HomeUpComingScreen:{
         key:"HomeUpComingScreen",
-        title:"Upcoming"
+        title:"Upcoming",
+        icon:"timer-outline"
     }
 }
