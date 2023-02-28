@@ -1,7 +1,9 @@
 import React from 'react'
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { Text } from 'react-native-paper';
-import { useNavigation, useRoute } from '@react-navigation/native';
+import {  useRoute } from '@react-navigation/native';
+
+
 
 const MainScreen  = ()=> {
     const route = useRoute();
