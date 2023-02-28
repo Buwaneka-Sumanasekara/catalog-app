@@ -1,7 +1,30 @@
 export default {
-    DrawerScreen:"DrawerScreen",
-    HomeScreen:"HomeScreen",
-    ListOfPagesScreen:"ListOfPagesScreen",
-    DetailScreen:"DetailScreen",
-    FavoritesScreen:"FavoritesScreen"
+    DrawerScreen:{
+        key:"DrawerScreen",
+        title:""
+    },
+    DetailScreen:{
+        key:"DetailScreen",
+        title:""
+    },
+    FavoritesScreen:{
+        key:"FavoritesScreen",
+        title:"Favorite"
+    },
+    HomeScreen:{
+        key:"HomeScreen",
+        title:"Home"
+    },
+    HomeAiringScreen:{
+        key:"HomeAiringScreen",
+        title:"Airing"
+    },
+    HomeCompleteScreen:{
+        key:"HomeCompleteScreen",
+        title:"Complete"
+    },
+    HomeUpComingScreen:{
+        key:"HomeUpComingScreen",
+        title:"Upcoming"
+    }
 }

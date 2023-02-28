@@ -1,3 +1,4 @@
+import {StyleSheet} from "react-native"
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import ScreenNames from '../constants/ScreenNames';
 
@@ -5,15 +6,59 @@ import ScreenNames from '../constants/ScreenNames';
 //screens
 import MainScreen from "../screens/MainScreen"
 import FavoritesScreen from "../screens/FavoritesScreen"
+import BottomTabStack from './BottomTabStack';
+import CustomDrawerContent from '../components/wrappers/CustomDrawer';
 
+import DrawerLabel from "../components/common/DrawerLabel.js"
+import FavoriteCount from '../components/common/FavouriteCount';
 
 const Drawer = createDrawerNavigator();
 
+
+
+
+/* Styles ==================================================================== */
+const styles = StyleSheet.create({
+    drawerItemStyle: {
+        paddingHorizontal:0,
+        marginVertical:0,
+        marginHorizontal:-10,
+    },
+})
+
 const DrawerStack = ()=> {
     return (
-        <Drawer.Navigator>
-            <Drawer.Screen name={ScreenNames.HomeScreen} component={MainScreen} />
-            <Drawer.Screen name={ScreenNames.FavoritesScreen} component={FavoritesScreen} />
+        <Drawer.Navigator 
+            drawerContent={(props) => <CustomDrawerContent {...props} />}
+            screenOptions={{
+                drawerItemStyle:styles.drawerItemStyle
+            }}
+        >
+            <Drawer.Screen 
+              options={{ 
+                title: ScreenNames.HomeScreen.title,
+                drawerLabel:(props)=>(
+                    <DrawerLabel 
+                        title={ScreenNames.HomeScreen.title} {...props}
+                    /> 
+                ),
+              }}  
+              name={ScreenNames.HomeScreen.key} 
+              component={BottomTabStack}
+            />
+            <Drawer.Screen 
+              options={{ 
+                title: ScreenNames.FavoritesScreen.title,
+                drawerLabel:(props)=>(
+                    <DrawerLabel 
+                        rightElement={(props)=><FavoriteCount {...props}/>} 
+                        title={ScreenNames.FavoritesScreen.title} {...props}
+                    /> 
+                )
+              }} 
+              name={ScreenNames.FavoritesScreen.key} 
+              component={FavoritesScreen} 
+            />
         </Drawer.Navigator>
     )
 }
