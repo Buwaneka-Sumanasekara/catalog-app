@@ -1,14 +1,13 @@
-import {IconButton,Text} from "react-native-paper"
-import { View } from "react-native"
+import { IconButton, Text } from 'react-native-paper';
+import { View } from 'react-native';
 
+const TabIcon = (props) => {
+  const { screen } = props;
+  return (
+    <View>
+      <IconButton icon={screen?.icon} />
+    </View>
+  );
+};
 
-const TabIcon  = (props)=>{
-    const {screen}=props
-    return (
-        <View>
-            <IconButton icon={screen?.icon}/>
-        </View>
-    )
-}
-
-export default TabIcon
+export default TabIcon;

@@ -1,69 +1,66 @@
-import {StyleSheet} from "react-native"
+import { StyleSheet } from 'react-native';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import ScreenNames from '../constants/ScreenNames';
 
-
 //screens
-import MainScreen from "../screens/MainScreen"
-import FavoritesScreen from "../screens/FavoritesScreen"
+import MainScreen from '../screens/MainScreen';
+import FavoritesScreen from '../screens/FavoritesScreen';
 import BottomTabStack from './BottomTabStack';
 import CustomDrawerContent from '../components/wrappers/CustomDrawer';
 
-import DrawerLabel from "../components/common/DrawerLabel.js"
+import DrawerLabel from '../components/common/DrawerLabel.js';
 import FavoriteCount from '../components/common/FavouriteCount';
 
 const Drawer = createDrawerNavigator();
 
-
-
-
 /* Styles ==================================================================== */
 const styles = StyleSheet.create({
-    drawerItemStyle: {
-        paddingHorizontal:0,
-        marginVertical:0,
-        marginHorizontal:-10,
-    },
-})
+  drawerItemStyle: {
+    paddingHorizontal: 0,
+    marginVertical: 0,
+    marginHorizontal: -10,
+  },
+});
 
-const DrawerStack = ()=> {
-    return (
-        <Drawer.Navigator 
-            drawerContent={(props) => <CustomDrawerContent {...props} />}
-            screenOptions={{
-                drawerItemStyle:styles.drawerItemStyle
-            }}
-        >
-            <Drawer.Screen 
-              options={{ 
-                title: ScreenNames.HomeScreen.title,
-                drawerLabel:(props)=>(
-                    <DrawerLabel 
-                        title={ScreenNames.HomeScreen.title} {...props}
-                        leftIcon={ScreenNames.HomeScreen.icon}
-                    /> 
-                ),
-              }}  
-              name={ScreenNames.HomeScreen.key} 
-              component={BottomTabStack}
+const DrawerStack = () => {
+  return (
+    <Drawer.Navigator
+      drawerContent={(props) => <CustomDrawerContent {...props} />}
+      screenOptions={{
+        drawerItemStyle: styles.drawerItemStyle,
+      }}
+    >
+      <Drawer.Screen
+        options={{
+          title: ScreenNames.HomeScreen.title,
+          drawerLabel: (props) => (
+            <DrawerLabel
+              title={ScreenNames.HomeScreen.title}
+              {...props}
+              leftIcon={ScreenNames.HomeScreen.icon}
             />
-            <Drawer.Screen 
-              options={{ 
-                title: ScreenNames.FavoritesScreen.title,
-                drawerLabel:(props)=>(
-                    <DrawerLabel 
-                        rightElement={(props)=><FavoriteCount {...props}/>} 
-                        title={ScreenNames.FavoritesScreen.title} {...props}
-                        leftIcon={ScreenNames.FavoritesScreen.icon}
-                    /> 
-                )
-              }} 
-              name={ScreenNames.FavoritesScreen.key} 
-              component={FavoritesScreen} 
+          ),
+        }}
+        name={ScreenNames.HomeScreen.key}
+        component={BottomTabStack}
+      />
+      <Drawer.Screen
+        options={{
+          title: ScreenNames.FavoritesScreen.title,
+          drawerLabel: (props) => (
+            <DrawerLabel
+              rightElement={(props) => <FavoriteCount {...props} />}
+              title={ScreenNames.FavoritesScreen.title}
+              {...props}
+              leftIcon={ScreenNames.FavoritesScreen.icon}
             />
-        </Drawer.Navigator>
-    )
-}
+          ),
+        }}
+        name={ScreenNames.FavoritesScreen.key}
+        component={FavoritesScreen}
+      />
+    </Drawer.Navigator>
+  );
+};
 
-
-export default DrawerStack
+export default DrawerStack;
