@@ -5,14 +5,14 @@ import { NavigationContainer } from '@react-navigation/native';
 import Store from './redux';
 import { QueryClient, QueryClientProvider } from 'react-query';
 import NavigationStack from './navigation';
-
+import NavigationTheme from './theme/NavTheme';
 const queryClient = new QueryClient();
 
 export default function App() {
   return (
     <Provider store={Store}>
       <QueryClientProvider client={queryClient}>
-        <NavigationContainer>
+        <NavigationContainer theme={NavigationTheme}>
           <NavigationStack />
         </NavigationContainer>
       </QueryClientProvider>
