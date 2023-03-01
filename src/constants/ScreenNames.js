@@ -15,7 +15,7 @@ export default {
   HomeScreen: {
     key: 'HomeScreen',
     title: '',
-    titleExtra:"Home",
+    titleExtra: 'Home',
     icon: 'home-outline',
   },
   HomeAiringScreen: {

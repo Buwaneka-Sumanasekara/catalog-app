@@ -16,7 +16,7 @@ export default {
   BOARDER_RADIUS: {
     SMALL: 8,
     MEDIUM: 10,
-    LARGE:20
+    LARGE: 20,
   },
   TIMEOUT: {
     TEXT_TYPE: 500,

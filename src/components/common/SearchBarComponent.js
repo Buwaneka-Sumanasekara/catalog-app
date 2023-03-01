@@ -10,30 +10,29 @@ const styles = StyleSheet.create({
   containerStyle: {
     flex: 1,
     paddingBottom: Globals.PADDING.MEDIUM,
-    backgroundColor:MD2Colors.white
+    backgroundColor: MD2Colors.white,
   },
-  inputStyle:{
-    marginLeft:-10,
+  inputStyle: {
+    marginLeft: -10,
   },
-  inputContainerStyle:{
-    backgroundColor:MD2Colors.grey300,
-    borderRadius:200,
-  }
+  inputContainerStyle: {
+    backgroundColor: MD2Colors.grey300,
+    borderRadius: 200,
+  },
 });
 
 export default SearchBarComponent = (props) => {
-  const { onChangeText, label,id } = props;
+  const { onChangeText, label, id } = props;
 
-  const inputRef=useRef()
+  const inputRef = useRef();
   const [query, setQuery] = useState('');
 
   const debouncedQuery = useDebounce(query, Globals.TIMEOUT.TEXT_TYPE);
 
-
-  useEffect(()=>{
-    setQuery("");
-    inputRef?.current?.focus()
-  },[id])
+  useEffect(() => {
+    setQuery('');
+    inputRef?.current?.focus();
+  }, [id]);
 
   useEffect(() => {
     onChangeText(debouncedQuery);
@@ -41,16 +40,16 @@ export default SearchBarComponent = (props) => {
 
   return (
     <View style={styles.containerStyle}>
-      <Searchbar 
-        placeholder={label} 
-        value={query} 
+      <Searchbar
+        placeholder={label}
+        value={query}
         onChangeText={(txt) => setQuery(txt)}
         inputStyle={styles.inputStyle}
         style={styles.inputContainerStyle}
         elevation={0}
         focusable={true}
         ref={inputRef}
-        />
+      />
     </View>
   );
 };

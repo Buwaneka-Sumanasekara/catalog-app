@@ -20,7 +20,6 @@ const MainScreen = () => {
 
   const [searchQuery, setSearchQuery] = useState('');
 
-
   const { data, fetchNextPage, hasNextPage, isRefetching, isLoading } = useFetchAnimeByStatus(
     animeStatus,
     searchQuery,
@@ -48,7 +47,12 @@ const MainScreen = () => {
         showsVerticalScrollIndicator={false}
         stickyHeaderIndices={[0]}
         ListHeaderComponent={
-          <SearchBarComponent id={`search${route.name}`} isLoading={isLoading} label={'Search'} onChangeText={(text) => setSearchQuery(text)} />
+          <SearchBarComponent
+            id={`search${route.name}`}
+            isLoading={isLoading}
+            label={'Search'}
+            onChangeText={(text) => setSearchQuery(text)}
+          />
         }
       />
     </DefaultWrapper>

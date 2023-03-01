@@ -27,9 +27,9 @@ const DrawerStack = () => {
   return (
     <Drawer.Navigator
       drawerContent={(props) => <CustomDrawerContent {...props} />}
-      screenOptions={({navigation})=>({
+      screenOptions={({ navigation }) => ({
         drawerItemStyle: styles.drawerItemStyle,
-        headerLeft: props => <IconButton icon={"menu"} onPress={navigation.toggleDrawer} />,
+        headerLeft: (props) => <IconButton icon={'menu'} onPress={navigation.toggleDrawer} />,
       })}
     >
       <Drawer.Screen
