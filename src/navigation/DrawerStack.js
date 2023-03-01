@@ -31,8 +31,7 @@ const DrawerStack = () => {
       screenOptions={({ navigation }) => ({
         drawerItemStyle: styles.drawerItemStyle,
         headerLeft: (props) => {
-          
-          return (<MenuButton  onPress={navigation.toggleDrawer} />)
+          return <MenuButton onPress={navigation.toggleDrawer} />;
         },
       })}
     >

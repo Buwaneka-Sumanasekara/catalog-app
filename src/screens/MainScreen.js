@@ -16,11 +16,10 @@ import { addToFavoriteList, removeFromFavoriteList } from '../redux/favorites/ac
 import ReduxActionTypes from '../constants/ReduxActionTypes';
 import { useDispatch } from 'react-redux';
 
-
 const MainScreen = () => {
   const route = useRoute();
-  const navigation=useNavigation()
-  const dispatch = useDispatch()
+  const navigation = useNavigation();
+  const dispatch = useDispatch();
 
   const animeStatus = CommonUtil.getAnimeStatusByScreenKey(route.name);
 
@@ -35,27 +34,22 @@ const MainScreen = () => {
     invalidateFetchAnimeByStatusQueries(animeStatus);
   }, []);
 
-
- 
-
-
-
-  const onPressItem = (item) =>{
+  const onPressItem = (item) => {
     navigation.navigate(ScreenNames.DetailScreen.key, {
-      itemId:item.id,
+      itemId: item.id,
     });
-  }
+  };
 
-  const onPressFavorite = useCallback((item,isRemove=false)=>{
-
-    if(isRemove){
-      dispatch({type:ReduxActionTypes.REMOVE_FROM_FAVORITES,item:JSON.stringify(item)})
-    }else{
-      dispatch({type:ReduxActionTypes.ADD_TO_FAVORITES,item:JSON.stringify(item)})
-    }
-    
-  },[dispatch])
-
+  const onPressFavorite = useCallback(
+    (item, isRemove = false) => {
+      if (isRemove) {
+        dispatch({ type: ReduxActionTypes.REMOVE_FROM_FAVORITES, item: JSON.stringify(item) });
+      } else {
+        dispatch({ type: ReduxActionTypes.ADD_TO_FAVORITES, item: JSON.stringify(item) });
+      }
+    },
+    [dispatch],
+  );
 
   const items = data || [];
   return (
@@ -63,7 +57,13 @@ const MainScreen = () => {
       <FlatList
         data={items}
         extraData={items || isLoading || isRefetching}
-        renderItem={({ item }) => <AnimeListItem {...item} onPress={()=>onPressItem(item)} onPressFavorite={(item,isRemove)=>onPressFavorite(item,isRemove)} />}
+        renderItem={({ item }) => (
+          <AnimeListItem
+            {...item}
+            onPress={() => onPressItem(item)}
+            onPressFavorite={(item, isRemove) => onPressFavorite(item, isRemove)}
+          />
+        )}
         keyExtractor={(item, index) => `${item.id}${index}`}
         onEndReachedThreshold={0.5}
         onEndReached={hasNextPage ? () => fetchNextPage() : undefined}

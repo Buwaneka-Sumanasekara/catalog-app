@@ -26,15 +26,14 @@ function getAnimeStatusByScreenKey(screenKey) {
   return status;
 }
 
-const checkValueExistInArray=(value,ar=[],key="")=>{
-  const found=ar.find(item=>value[key]===item[key])
-  return found || false
-}
-
+const checkValueExistInArray = (value, ar = [], key = '') => {
+  const found = ar.find((item) => value[key] === item[key]);
+  return found || false;
+};
 
 export {
   removeDuplicatesFromArray,
   removeItemFromArray,
   getAnimeStatusByScreenKey,
-  checkValueExistInArray
+  checkValueExistInArray,
 };

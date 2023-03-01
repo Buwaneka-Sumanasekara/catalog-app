@@ -68,7 +68,7 @@ const styles = StyleSheet.create({
 });
 
 const AnimeListItem = (props) => {
-  const { id,images, title, score, year, rating, isFavorite,onPress,onPressFavorite } = props;
+  const { id, images, title, score, year, rating, isFavorite, onPress, onPressFavorite } = props;
 
   return (
     <Pressable style={styles.containerStyle} onPress={onPress}>
@@ -101,7 +101,7 @@ const AnimeListItem = (props) => {
               size={32}
               iconColor={MD2Colors.white}
               icon={isFavorite ? 'cards-heart' : 'cards-heart-outline'}
-              onPress={()=>onPressFavorite(props,isFavorite)}
+              onPress={() => onPressFavorite(props, isFavorite)}
             />
           </View>
           <LinearGradient
