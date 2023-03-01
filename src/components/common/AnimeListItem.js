@@ -2,7 +2,6 @@ import { ImageBackground, StyleSheet, View } from 'react-native';
 import { Text, MD2Colors, Chip, IconButton } from 'react-native-paper';
 import LinearGradient from 'react-native-linear-gradient';
 import Globals from '../../constants/Globals';
-import { generateBoxShadowStyle } from '../../utils/CommonUtil';
 
 /* Styles ==================================================================== */
 const styles = StyleSheet.create({

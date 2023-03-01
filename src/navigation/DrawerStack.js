@@ -10,6 +10,7 @@ import CustomDrawerContent from '../components/wrappers/CustomDrawer';
 
 import DrawerLabel from '../components/common/DrawerLabel.js';
 import FavoriteCount from '../components/common/FavouriteCount';
+import { IconButton } from 'react-native-paper';
 
 const Drawer = createDrawerNavigator();
 
@@ -26,16 +27,17 @@ const DrawerStack = () => {
   return (
     <Drawer.Navigator
       drawerContent={(props) => <CustomDrawerContent {...props} />}
-      screenOptions={{
+      screenOptions={({navigation})=>({
         drawerItemStyle: styles.drawerItemStyle,
-      }}
+        headerLeft: props => <IconButton icon={"menu"} onPress={navigation.toggleDrawer} />,
+      })}
     >
       <Drawer.Screen
         options={{
           title: ScreenNames.HomeScreen.title,
           drawerLabel: (props) => (
             <DrawerLabel
-              title={ScreenNames.HomeScreen.title}
+              title={ScreenNames.HomeScreen.titleExtra || ScreenNames.HomeScreen.title}
               {...props}
               leftIcon={ScreenNames.HomeScreen.icon}
             />
