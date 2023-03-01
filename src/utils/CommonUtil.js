@@ -26,33 +26,15 @@ function getAnimeStatusByScreenKey(screenKey) {
   return status;
 }
 
-const generateBoxShadowStyle = (
-  xOffset,
-  yOffset,
-  shadowColorIos,
-  shadowOpacity,
-  shadowRadius,
-  elevation,
-  shadowColorAndroid,
-) => {
-  if (Platform.OS === 'ios') {
-    return {
-      shadowColor: shadowColorIos,
-      shadowOffset: { width: xOffset, height: yOffset },
-      shadowOpacity,
-      shadowRadius,
-    };
-  } else {
-    return {
-      elevation,
-      shadowColor: shadowColorAndroid,
-    };
-  }
-};
+const checkValueExistInArray=(value,ar=[],key="")=>{
+  const found=ar.find(item=>value[key]===item[key])
+  return found || false
+}
+
 
 export {
   removeDuplicatesFromArray,
   removeItemFromArray,
   getAnimeStatusByScreenKey,
-  generateBoxShadowStyle,
+  checkValueExistInArray
 };

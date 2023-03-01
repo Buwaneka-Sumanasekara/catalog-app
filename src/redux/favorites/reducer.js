@@ -1,22 +1,29 @@
-import { ADD_TO_FAVORITES, REMOVE_FROM_FAVORITES } from '../../constants/ReduxActionTypes';
+
+import ReduxActionTypes from '../../constants/ReduxActionTypes';
+import *  as CommonUtils from '../../utils/CommonUtil' 
+
 
 const initialState = {
-  favorites: [],
-  favoriteCount: 0,
+  items: [],
+  count: 0,
 };
 
 export default function reducer(state = initialState, action) {
   switch (action.type) {
-    case ADD_TO_FAVORITES: {
+    case ReduxActionTypes.ADD_TO_FAVORITES: {
+      const items= [...new Set([...state.items,JSON.parse(action.item)])]
       return {
         ...state,
-        favorites: [...new Set([...state.favorites, ...action.item])],
+        items:items,
+        count:items.length
       };
     }
-    case REMOVE_FROM_FAVORITES: {
+    case ReduxActionTypes.REMOVE_FROM_FAVORITES: {
+      const items=CommonUtils.removeItemFromArray(state.items, JSON.parse(action.item), 'id')
       return {
         ...state,
-        favorites: removeItemFromArray(state.favorites, item, 'id'),
+        items: items,
+        count:items.length
       };
     }
     default:

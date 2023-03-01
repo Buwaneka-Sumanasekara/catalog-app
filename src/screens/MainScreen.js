@@ -2,7 +2,7 @@ import React, { useCallback, useEffect, useState } from 'react';
 import { FlatList } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { Button, Text } from 'react-native-paper';
-import { useRoute } from '@react-navigation/native';
+import { useNavigation, useRoute } from '@react-navigation/native';
 import { invalidateFetchAnimeByStatusQueries, useFetchAnimeByStatus } from '../hooks/useFetchAnime';
 import * as CommonUtil from '../utils/CommonUtil';
 import { useQueryClient } from 'react-query';
@@ -10,11 +10,17 @@ import DefaultWrapper from '../components/wrappers/DefaultWrapper';
 import AnimeListItem from '../components/common/AnimeListItem';
 import EmptyView from '../components/common/EmptyView';
 import SearchBarComponent from '../components/common/SearchBarComponent';
-import { useDebounce } from '../hooks/useFetchCommon';
-import Globals from '../constants/Globals';
+import ScreenNames from '../constants/ScreenNames';
+import { useAddToFavoriteList, useRemoveToFavoriteList } from '../hooks/useMutateAnime';
+import { addToFavoriteList, removeFromFavoriteList } from '../redux/favorites/actions';
+import ReduxActionTypes from '../constants/ReduxActionTypes';
+import { useDispatch } from 'react-redux';
+
 
 const MainScreen = () => {
   const route = useRoute();
+  const navigation=useNavigation()
+  const dispatch = useDispatch()
 
   const animeStatus = CommonUtil.getAnimeStatusByScreenKey(route.name);
 
@@ -29,14 +35,35 @@ const MainScreen = () => {
     invalidateFetchAnimeByStatusQueries(animeStatus);
   }, []);
 
-  const items = data || [];
 
+ 
+
+
+
+  const onPressItem = (item) =>{
+    navigation.navigate(ScreenNames.DetailScreen.key, {
+      itemId:item.id,
+    });
+  }
+
+  const onPressFavorite = useCallback((item,isRemove=false)=>{
+
+    if(isRemove){
+      dispatch({type:ReduxActionTypes.REMOVE_FROM_FAVORITES,item:JSON.stringify(item)})
+    }else{
+      dispatch({type:ReduxActionTypes.ADD_TO_FAVORITES,item:JSON.stringify(item)})
+    }
+    
+  },[dispatch])
+
+
+  const items = data || [];
   return (
     <DefaultWrapper>
       <FlatList
         data={items}
         extraData={items || isLoading || isRefetching}
-        renderItem={({ item }) => <AnimeListItem {...item} />}
+        renderItem={({ item }) => <AnimeListItem {...item} onPress={()=>onPressItem(item)} onPressFavorite={(item,isRemove)=>onPressFavorite(item,isRemove)} />}
         keyExtractor={(item, index) => `${item.id}${index}`}
         onEndReachedThreshold={0.5}
         onEndReached={hasNextPage ? () => fetchNextPage() : undefined}

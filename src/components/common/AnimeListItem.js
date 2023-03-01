@@ -1,4 +1,4 @@
-import { ImageBackground, StyleSheet, View } from 'react-native';
+import { ImageBackground, Pressable, StyleSheet, View } from 'react-native';
 import { Text, MD2Colors, Chip, IconButton } from 'react-native-paper';
 import LinearGradient from 'react-native-linear-gradient';
 import Globals from '../../constants/Globals';
@@ -68,10 +68,10 @@ const styles = StyleSheet.create({
 });
 
 const AnimeListItem = (props) => {
-  const { images, title, score, year, rating, isFavorite } = props;
+  const { id,images, title, score, year, rating, isFavorite,onPress,onPressFavorite } = props;
 
   return (
-    <View style={styles.containerStyle}>
+    <Pressable style={styles.containerStyle} onPress={onPress}>
       <View style={styles.imageContainerStyle}>
         <ImageBackground
           source={{ uri: images?.webp?.image_url }}
@@ -101,6 +101,7 @@ const AnimeListItem = (props) => {
               size={32}
               iconColor={MD2Colors.white}
               icon={isFavorite ? 'cards-heart' : 'cards-heart-outline'}
+              onPress={()=>onPressFavorite(props,isFavorite)}
             />
           </View>
           <LinearGradient
@@ -118,7 +119,7 @@ const AnimeListItem = (props) => {
           </View>
         ) : null}
       </View>
-    </View>
+    </Pressable>
   );
 };
 
