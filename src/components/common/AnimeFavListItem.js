@@ -12,14 +12,12 @@ const boxWidth = (AppSizes.screen.width - Globals.BOARDER_RADIUS.MEDIUM * 3) * 0
 const styles = StyleSheet.create({
   containerStyle: {
     width: boxWidth,
-    // backgroundColor:"red",
   },
   imageContainerStyle: {
     borderRadius: Globals.BOARDER_RADIUS.MEDIUM,
     overflow: 'hidden',
     marginBottom: Globals.PADDING.EXTRA_SMALL,
     minHeight: 200,
-    // backgroundColor: 'red',
   },
   titleStyle: {
     color: MD2Colors.white,
