@@ -4,7 +4,7 @@
 
 # Xcode
 #
-build/
+ios/build
 *.pbxuser
 !default.pbxuser
 xcuserdata
@@ -24,8 +24,12 @@ local.properties
 *.hprof
 .cxx/
 
-#enable apk upload
-!/build/outputs/apk/release/*.apk
+# Allow
+! /android/build/outputs
+
+/android
+
+
 
 # node.js
 #
