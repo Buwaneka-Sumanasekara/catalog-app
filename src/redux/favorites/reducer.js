@@ -9,7 +9,9 @@ const initialState = {
 export default function reducer(state = initialState, action) {
   switch (action.type) {
     case ReduxActionTypes.ADD_TO_FAVORITES: {
-      const items = [...new Set([...state.items, JSON.parse(action.item)])];
+      const items = [
+        ...new Set([...state.items, { ...JSON.parse(action.item), isFavorite: true }]),
+      ];
       return {
         ...state,
         items: items,

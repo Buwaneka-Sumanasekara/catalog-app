@@ -9,7 +9,7 @@ export default {
   },
   FavoritesScreen: {
     key: 'FavoritesScreen',
-    title: 'Favorite',
+    title: 'Favorites',
     icon: 'account-heart-outline',
   },
   HomeScreen: {

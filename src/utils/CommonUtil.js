@@ -31,9 +31,38 @@ const checkValueExistInArray = (value, ar = [], key = '') => {
   return found || false;
 };
 
+function getPaddings(columns, padding, index) {
+  let paddingLeft = padding / 2;
+  let paddingRight = padding / 2;
+  let paddingTop = padding / 2;
+  const paddingBottom = padding / 2;
+
+  const row = Math.floor(index / columns);
+  const isFirstItem = index % columns === 0 || index % columns === columns;
+  const isLastItem = index % columns === columns - 1;
+  if (row === 0) {
+    //first row
+    paddingTop = padding;
+    if (isFirstItem) {
+      paddingLeft = 0;
+    } else if (isLastItem) {
+      paddingRight = 0;
+    }
+  } else {
+    if (isFirstItem) {
+      paddingLeft = 0;
+    } else if (isLastItem) {
+      paddingRight = 0;
+    }
+  }
+
+  return { paddingLeft, paddingRight, paddingTop, paddingBottom };
+}
+
 export {
   removeDuplicatesFromArray,
   removeItemFromArray,
   getAnimeStatusByScreenKey,
   checkValueExistInArray,
+  getPaddings,
 };

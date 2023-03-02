@@ -18,18 +18,18 @@ const styles = StyleSheet.create({
 });
 
 export default EmptyView = (props) => {
-  const { isLoading } = props;
+  const { isLoading, loadingText, noDataText } = props;
   return (
     <View style={styles.containerStyle}>
       {isLoading ? (
         <React.Fragment>
           <ActivityIndicator size={'large'} animating={true} style={styles.loaderStyle} />
-          <Text>{`Hold on...`}</Text>
+          <Text>{loadingText || `Hold on...`}</Text>
         </React.Fragment>
       ) : (
         <React.Fragment>
           <IconButton icon="information-outline" size={50} />
-          <Text>{`No Data found`}</Text>
+          <Text>{noDataText || `No Data found`}</Text>
         </React.Fragment>
       )}
     </View>

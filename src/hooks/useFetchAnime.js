@@ -1,7 +1,7 @@
 import { getAxios } from '../utils/AxiosUtil';
 import Globals from '../constants/Globals';
 import QueryKeys from '../constants/QueryKeys';
-import { useInfiniteQuery, useQueryClient } from 'react-query';
+import { useInfiniteQuery, useQueryClient, useQuery } from 'react-query';
 import { useSelector } from 'react-redux';
 import * as CommonUtil from '../utils/CommonUtil';
 

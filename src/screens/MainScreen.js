@@ -1,7 +1,5 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import { FlatList } from 'react-native';
-import { SafeAreaView } from 'react-native-safe-area-context';
-import { Button, Text } from 'react-native-paper';
 import { useNavigation, useRoute } from '@react-navigation/native';
 import { invalidateFetchAnimeByStatusQueries, useFetchAnimeByStatus } from '../hooks/useFetchAnime';
 import * as CommonUtil from '../utils/CommonUtil';
