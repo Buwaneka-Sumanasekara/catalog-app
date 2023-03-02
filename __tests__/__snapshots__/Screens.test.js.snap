@@ -1,0 +1,253 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`All Screens renders snapshots check: DetailScreen 1`] = `
+<View
+  style={
+    [
+      {
+        "backgroundColor": "#ffffff",
+        "flex": 1,
+        "paddingHorizontal": 16,
+      },
+      undefined,
+      {
+        "paddingHorizontal": 0,
+        "paddingVertical": 0,
+      },
+    ]
+  }
+>
+  <RCTScrollView>
+    <View>
+      <View
+        style={
+          {
+            "alignItems": "center",
+            "flex": 1,
+            "justifyContent": "center",
+          }
+        }
+      >
+        <View
+          accessibilityRole="progressbar"
+          accessibilityState={
+            {
+              "busy": true,
+            }
+          }
+          accessible={true}
+          style={
+            [
+              {
+                "alignItems": "center",
+                "justifyContent": "center",
+              },
+              {
+                "marginBottom": 20,
+              },
+            ]
+          }
+        >
+          <View
+            collapsable={false}
+            style={
+              {
+                "height": 48,
+                "opacity": 1,
+                "width": 48,
+              }
+            }
+          >
+            <View
+              collapsable={false}
+              style={
+                {
+                  "alignItems": "center",
+                  "bottom": 0,
+                  "justifyContent": "center",
+                  "left": 0,
+                  "position": "absolute",
+                  "right": 0,
+                  "top": 0,
+                }
+              }
+            >
+              <View
+                collapsable={false}
+                style={
+                  {
+                    "height": 48,
+                    "transform": [
+                      {
+                        "rotate": "45deg",
+                      },
+                    ],
+                    "width": 48,
+                  }
+                }
+              >
+                <View
+                  collapsable={false}
+                  style={
+                    {
+                      "height": 24,
+                      "overflow": "hidden",
+                      "width": 48,
+                    }
+                  }
+                >
+                  <View
+                    collapsable={false}
+                    style={
+                      {
+                        "height": 48,
+                        "transform": [
+                          {
+                            "translateY": 0,
+                          },
+                          {
+                            "rotate": "-165deg",
+                          },
+                        ],
+                        "width": 48,
+                      }
+                    }
+                  >
+                    <View
+                      collapsable={false}
+                      style={
+                        {
+                          "height": 24,
+                          "overflow": "hidden",
+                          "width": 48,
+                        }
+                      }
+                    >
+                      <View
+                        collapsable={false}
+                        style={
+                          {
+                            "borderColor": "rgba(103, 80, 164, 1)",
+                            "borderRadius": 24,
+                            "borderWidth": 4.8,
+                            "height": 48,
+                            "width": 48,
+                          }
+                        }
+                      />
+                    </View>
+                  </View>
+                </View>
+              </View>
+            </View>
+            <View
+              collapsable={false}
+              style={
+                {
+                  "alignItems": "center",
+                  "bottom": 0,
+                  "justifyContent": "center",
+                  "left": 0,
+                  "position": "absolute",
+                  "right": 0,
+                  "top": 0,
+                }
+              }
+            >
+              <View
+                collapsable={false}
+                style={
+                  {
+                    "height": 48,
+                    "transform": [
+                      {
+                        "rotate": "45deg",
+                      },
+                    ],
+                    "width": 48,
+                  }
+                }
+              >
+                <View
+                  collapsable={false}
+                  style={
+                    {
+                      "height": 24,
+                      "overflow": "hidden",
+                      "top": 24,
+                      "width": 48,
+                    }
+                  }
+                >
+                  <View
+                    collapsable={false}
+                    style={
+                      {
+                        "height": 48,
+                        "transform": [
+                          {
+                            "translateY": -24,
+                          },
+                          {
+                            "rotate": "345deg",
+                          },
+                        ],
+                        "width": 48,
+                      }
+                    }
+                  >
+                    <View
+                      collapsable={false}
+                      style={
+                        {
+                          "height": 24,
+                          "overflow": "hidden",
+                          "width": 48,
+                        }
+                      }
+                    >
+                      <View
+                        collapsable={false}
+                        style={
+                          {
+                            "borderColor": "rgba(103, 80, 164, 1)",
+                            "borderRadius": 24,
+                            "borderWidth": 4.8,
+                            "height": 48,
+                            "width": 48,
+                          }
+                        }
+                      />
+                    </View>
+                  </View>
+                </View>
+              </View>
+            </View>
+          </View>
+        </View>
+        <Text
+          style={
+            [
+              {
+                "textAlign": "left",
+              },
+              {
+                "color": "rgba(28, 27, 31, 1)",
+                "fontFamily": "System",
+                "fontWeight": "400",
+                "letterSpacing": 0,
+              },
+              {
+                "writingDirection": "ltr",
+              },
+              undefined,
+            ]
+          }
+        >
+          Hold on...
+        </Text>
+      </View>
+    </View>
+  </RCTScrollView>
+</View>
+`;

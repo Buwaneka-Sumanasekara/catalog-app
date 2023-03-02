@@ -32,12 +32,16 @@ export default DetailInfo = (props) => {
   return (
     <View style={styles.containerStyle}>
       <View style={styles.topContainerStyle}>
-        <Chip style={styles.topLeftChipStyle} selected={true} icon="star">{`${score}`}</Chip>
-        <Chip
-          style={styles.topRightChipStyle}
-          selected={true}
-          icon="calendar-star"
-        >{`${year}`}</Chip>
+        {score ? (
+          <Chip style={styles.topLeftChipStyle} selected={true} icon="star">{`${score}`}</Chip>
+        ) : null}
+        {year ? (
+          <Chip
+            style={styles.topRightChipStyle}
+            selected={true}
+            icon="calendar-star"
+          >{`${year}`}</Chip>
+        ) : null}
       </View>
 
       <View style={styles.midContainerStyle}>
