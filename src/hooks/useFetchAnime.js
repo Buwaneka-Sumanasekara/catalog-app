@@ -63,8 +63,8 @@ const getAnimeById = async (id) => {
 export const useFetchAnimeById = (id) => {
   const favoriteItems = useSelector((state) => state.favorites.items);
   return useQuery([QueryKeys.ANIME_BY_ID, id], () => getAnimeById(id), {
-    select: (data) => {
-      const anime = data?.data;
+    select: (res) => {
+      const anime = res?.data?.data;
       return {
         ...anime,
         isFavorite: CommonUtil.checkValueExistInArray(anime, favoriteItems, 'mal_id'),

@@ -15,12 +15,17 @@ const styles = StyleSheet.create({
   loaderStyle: {
     marginBottom: Globals.PADDING.LARGE,
   },
+  containerCenterStyle: {
+    alignItems: 'center',
+    justifyContent: 'center',
+    flex: 1,
+  },
 });
 
 export default EmptyView = (props) => {
-  const { isLoading, loadingText, noDataText } = props;
+  const { isLoading, loadingText, noDataText, isFlatList } = props;
   return (
-    <View style={styles.containerStyle}>
+    <View style={isFlatList ? styles.containerStyle : styles.containerCenterStyle}>
       {isLoading ? (
         <React.Fragment>
           <ActivityIndicator size={'large'} animating={true} style={styles.loaderStyle} />

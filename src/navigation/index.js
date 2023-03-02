@@ -6,7 +6,9 @@ import DrawerStack from './DrawerStack';
 
 //screens
 import DetailScreen from '../screens/DetailScreen';
-import { commonScreenOptions } from './Config';
+import { commonScreenOptions, detailScreenOptions } from './Config';
+import { MD2Colors } from 'react-native-paper';
+import BackButton from '../components/common/BackButton';
 
 const RootStack = createNativeStackNavigator();
 
@@ -18,7 +20,16 @@ const NavigationStack = () => {
         name={ScreenNames.DrawerScreen.key}
         component={DrawerStack}
       />
-      <RootStack.Screen name={ScreenNames.DetailScreen.key} component={DetailScreen} />
+      <RootStack.Screen
+        options={({ navigation }) => ({
+          ...detailScreenOptions,
+          headerLeft: (props) => {
+            return <BackButton onPress={() => navigation.goBack()} />;
+          },
+        })}
+        name={ScreenNames.DetailScreen.key}
+        component={DetailScreen}
+      />
     </RootStack.Navigator>
   );
 };

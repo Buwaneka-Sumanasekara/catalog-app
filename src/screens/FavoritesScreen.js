@@ -28,7 +28,7 @@ const FavoriteScreen = () => {
           <AnimeFavListItem columns={2} index={index} {...item} onPress={() => onPressItem(item)} />
         )}
         keyExtractor={(item, index) => `${item.id}${index}`}
-        ListEmptyComponent={<EmptyView noDataText={'No favorite items found'} />}
+        ListEmptyComponent={<EmptyView isFlatList={true} noDataText={'No favorite items found'} />}
         showsHorizontalScrollIndicator={false}
         showsVerticalScrollIndicator={false}
       />

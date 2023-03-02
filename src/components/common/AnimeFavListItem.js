@@ -88,7 +88,7 @@ const styles = StyleSheet.create({
 });
 
 const AnimeFavListItem = (props) => {
-  const { index, columns, images, title, score, year, rating, onPress } = props;
+  const { index, columns, images, title, score, onPress } = props;
 
   const paddings = CommonUtil.getPaddings(columns || 1, Globals.PADDING.SMALL, index || 0);
   return (

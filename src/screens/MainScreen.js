@@ -67,7 +67,7 @@ const MainScreen = () => {
         onEndReached={hasNextPage ? () => fetchNextPage() : undefined}
         onRefresh={invalidateFetchAnimeByStatusCache}
         refreshing={false}
-        ListEmptyComponent={<EmptyView isLoading={isLoading} />}
+        ListEmptyComponent={<EmptyView isFlatList={true} isLoading={isLoading} />}
         showsHorizontalScrollIndicator={false}
         showsVerticalScrollIndicator={false}
         stickyHeaderIndices={[0]}
