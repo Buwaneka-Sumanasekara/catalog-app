@@ -2,6 +2,7 @@ import { ImageBackground, Pressable, StyleSheet, View } from 'react-native';
 import { Text, MD2Colors, Chip, IconButton } from 'react-native-paper';
 import LinearGradient from 'react-native-linear-gradient';
 import Globals from '../../constants/Globals';
+import FavoriteButton from './FavoriteButton';
 
 /* Styles ==================================================================== */
 const styles = StyleSheet.create({
@@ -68,7 +69,7 @@ const styles = StyleSheet.create({
 });
 
 const AnimeListItem = (props) => {
-  const { id, images, title, score, year, rating, isFavorite, onPress, onPressFavorite } = props;
+  const { images, title, score, year, rating, onPress } = props;
 
   return (
     <Pressable style={styles.containerStyle} onPress={onPress}>
@@ -97,12 +98,8 @@ const AnimeListItem = (props) => {
             {score ? (
               <Chip style={styles.chipStyle} selected={true} icon="star">{`${score}`}</Chip>
             ) : null}
-            <IconButton
-              size={32}
-              iconColor={MD2Colors.white}
-              icon={isFavorite ? 'cards-heart' : 'cards-heart-outline'}
-              onPress={() => onPressFavorite(props, isFavorite)}
-            />
+
+            <FavoriteButton item={props} />
           </View>
           <LinearGradient
             colors={[MD2Colors.transparent, MD2Colors.black]}

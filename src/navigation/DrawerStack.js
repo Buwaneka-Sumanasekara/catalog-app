@@ -33,6 +33,7 @@ const DrawerStack = () => {
         headerLeft: (props) => {
           return <MenuButton onPress={navigation.toggleDrawer} />;
         },
+        headerShadowVisible: false,
       })}
     >
       <Drawer.Screen

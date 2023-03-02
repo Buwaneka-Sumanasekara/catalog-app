@@ -28,26 +28,11 @@ const MainScreen = () => {
     searchQuery,
   );
 
-  const invalidateFetchAnimeByStatusCache = useCallback(() => {
-    invalidateFetchAnimeByStatusQueries(animeStatus);
-  }, []);
-
   const onPressItem = (item) => {
     navigation.navigate(ScreenNames.DetailScreen.key, {
       itemId: item.id,
     });
   };
-
-  const onPressFavorite = useCallback(
-    (item, isRemove = false) => {
-      if (isRemove) {
-        dispatch({ type: ReduxActionTypes.REMOVE_FROM_FAVORITES, item: JSON.stringify(item) });
-      } else {
-        dispatch({ type: ReduxActionTypes.ADD_TO_FAVORITES, item: JSON.stringify(item) });
-      }
-    },
-    [dispatch],
-  );
 
   const items = data || [];
   return (
@@ -55,18 +40,10 @@ const MainScreen = () => {
       <FlatList
         data={items}
         extraData={items || isLoading || isRefetching}
-        renderItem={({ item }) => (
-          <AnimeListItem
-            {...item}
-            onPress={() => onPressItem(item)}
-            onPressFavorite={(item, isRemove) => onPressFavorite(item, isRemove)}
-          />
-        )}
+        renderItem={({ item }) => <AnimeListItem {...item} onPress={() => onPressItem(item)} />}
         keyExtractor={(item, index) => `${item.id}${index}`}
         onEndReachedThreshold={0.5}
         onEndReached={hasNextPage ? () => fetchNextPage() : undefined}
-        onRefresh={invalidateFetchAnimeByStatusCache}
-        refreshing={false}
         ListEmptyComponent={<EmptyView isFlatList={true} isLoading={isLoading} />}
         showsHorizontalScrollIndicator={false}
         showsVerticalScrollIndicator={false}
