@@ -3,8 +3,8 @@
 .DS_Store
 
 # Xcode
-#
-ios/build
+
+build
 *.pbxuser
 !default.pbxuser
 xcuserdata
@@ -24,10 +24,6 @@ local.properties
 *.hprof
 .cxx/
 
-# Allow
-! /android/build/outputs
-
-/android
 
 
 
