@@ -4,7 +4,7 @@ import { useFetchAnimeById } from '../hooks/useFetchAnime';
 import EmptyView from '../components/common/EmptyView';
 import DetailHeader from '../components/details/DetailHeader';
 import DetailBody from '../components/details/DetailBody';
-import { MD2Colors, useTheme } from 'react-native-paper';
+import { MD2Colors } from 'react-native-paper';
 import DetailInfo from '../components/details/DetailInfo';
 import ScrollWrapper from '../components/wrappers/ScrollWrapper';
 import FavoriteButton from '../components/common/FavoriteButton';

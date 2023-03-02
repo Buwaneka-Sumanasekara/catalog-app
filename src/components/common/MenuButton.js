@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Badge, IconButton, useTheme } from 'react-native-paper';
+import { Badge, IconButton } from 'react-native-paper';
 import { useSelector } from 'react-redux';
 import { StyleSheet, View } from 'react-native';
 

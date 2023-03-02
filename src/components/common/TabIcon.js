@@ -1,4 +1,4 @@
-import { IconButton, Text } from 'react-native-paper';
+import { IconButton } from 'react-native-paper';
 import { View } from 'react-native';
 
 const TabIcon = (props) => {

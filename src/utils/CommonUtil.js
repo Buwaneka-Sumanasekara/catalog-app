@@ -1,4 +1,3 @@
-import { Platform } from 'react-native';
 import Globals from '../constants/Globals';
 import ScreenNames from '../constants/ScreenNames';
 

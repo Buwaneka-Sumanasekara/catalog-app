@@ -1,6 +1,5 @@
-import { useSelector } from 'react-redux';
-import { StyleSheet, View, ImageBackground } from 'react-native';
-import { MD2Colors, Text } from 'react-native-paper';
+import { StyleSheet, ImageBackground } from 'react-native';
+import { MD2Colors } from 'react-native-paper';
 import LinearGradient from 'react-native-linear-gradient';
 import AppSizes from '../../constants/AppSizes';
 import Globals from '../../constants/Globals';

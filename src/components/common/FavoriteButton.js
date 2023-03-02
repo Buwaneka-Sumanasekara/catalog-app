@@ -1,7 +1,7 @@
 import { useCallback } from 'react';
-import { Badge, IconButton, MD2Colors, useTheme } from 'react-native-paper';
-import { useDispatch, useSelector } from 'react-redux';
-import { StyleSheet, View } from 'react-native';
+import { IconButton, MD2Colors } from 'react-native-paper';
+import { useDispatch } from 'react-redux';
+import { StyleSheet } from 'react-native';
 import ReduxActionTypes from '../../constants/ReduxActionTypes';
 
 /* Styles ==================================================================== */
@@ -27,8 +27,8 @@ export default FavoriteButton = (props) => {
     <IconButton
       size={size || 32}
       iconColor={color || MD2Colors.white}
-      icon={item.isFavorite ? 'cards-heart' : 'cards-heart-outline'}
-      onPress={() => onPressFavorite(item.isFavorite)}
+      icon={item?.isFavorite ? 'cards-heart' : 'cards-heart-outline'}
+      onPress={() => onPressFavorite(item?.isFavorite)}
     />
   );
 };

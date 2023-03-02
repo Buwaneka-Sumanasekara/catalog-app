@@ -1,9 +1,8 @@
-import React, { useCallback } from 'react';
+import React from 'react';
 import { FlatList } from 'react-native';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { useNavigation } from '@react-navigation/native';
 import DefaultWrapper from '../components/wrappers/DefaultWrapper';
-import ReduxActionTypes from '../constants/ReduxActionTypes';
 import EmptyView from '../components/common/EmptyView';
 import AnimeFavListItem from '../components/common/AnimeFavListItem';
 import ScreenNames from '../constants/ScreenNames';

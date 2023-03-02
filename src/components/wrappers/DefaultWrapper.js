@@ -1,4 +1,3 @@
-import { SafeAreaView } from 'react-native-safe-area-context';
 import { StyleSheet, View } from 'react-native';
 import Globals from '../../constants/Globals';
 import { MD2Colors } from 'react-native-paper';

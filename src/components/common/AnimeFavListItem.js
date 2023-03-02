@@ -1,5 +1,5 @@
 import { ImageBackground, Pressable, StyleSheet, View } from 'react-native';
-import { Text, MD2Colors, Chip, IconButton } from 'react-native-paper';
+import { Text, MD2Colors, Chip } from 'react-native-paper';
 import LinearGradient from 'react-native-linear-gradient';
 import Globals from '../../constants/Globals';
 import AppSizes from '../../constants/AppSizes';

@@ -1,17 +1,13 @@
-import React, { useCallback, useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { FlatList } from 'react-native';
 import { useNavigation, useRoute } from '@react-navigation/native';
-import { invalidateFetchAnimeByStatusQueries, useFetchAnimeByStatus } from '../hooks/useFetchAnime';
+import { useFetchAnimeByStatus } from '../hooks/useFetchAnime';
 import * as CommonUtil from '../utils/CommonUtil';
-import { useQueryClient } from 'react-query';
 import DefaultWrapper from '../components/wrappers/DefaultWrapper';
 import AnimeListItem from '../components/common/AnimeListItem';
 import EmptyView from '../components/common/EmptyView';
 import SearchBarComponent from '../components/common/SearchBarComponent';
 import ScreenNames from '../constants/ScreenNames';
-import { useAddToFavoriteList, useRemoveToFavoriteList } from '../hooks/useMutateAnime';
-import { addToFavoriteList, removeFromFavoriteList } from '../redux/favorites/actions';
-import ReduxActionTypes from '../constants/ReduxActionTypes';
 import { useDispatch } from 'react-redux';
 
 const MainScreen = () => {

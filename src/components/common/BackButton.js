@@ -1,7 +1,6 @@
 import * as React from 'react';
-import { Badge, IconButton, MD2Colors, useTheme } from 'react-native-paper';
-import { useSelector } from 'react-redux';
-import { StyleSheet, View } from 'react-native';
+import { IconButton, MD2Colors } from 'react-native-paper';
+import { StyleSheet } from 'react-native';
 
 /* Styles ==================================================================== */
 const styles = StyleSheet.create({

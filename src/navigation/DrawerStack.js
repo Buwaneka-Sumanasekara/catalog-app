@@ -3,14 +3,12 @@ import { createDrawerNavigator } from '@react-navigation/drawer';
 import ScreenNames from '../constants/ScreenNames';
 
 //screens
-import MainScreen from '../screens/MainScreen';
 import FavoritesScreen from '../screens/FavoritesScreen';
 import BottomTabStack from './BottomTabStack';
 import CustomDrawerContent from '../components/wrappers/CustomDrawer';
 
 import DrawerLabel from '../components/common/DrawerLabel.js';
-import FavoriteCount from '../components/common/FavouriteCount';
-import { IconButton } from 'react-native-paper';
+import FavoriteCount from '../components/common/FavoriteCount';
 import MenuButton from '../components/common/MenuButton';
 
 const Drawer = createDrawerNavigator();
@@ -41,8 +39,8 @@ const DrawerStack = () => {
           title: ScreenNames.HomeScreen.title,
           drawerLabel: (props) => (
             <DrawerLabel
-              title={ScreenNames.HomeScreen.titleExtra || ScreenNames.HomeScreen.title}
               {...props}
+              title={ScreenNames.HomeScreen.titleExtra || ScreenNames.HomeScreen.title}
               leftIcon={ScreenNames.HomeScreen.icon}
             />
           ),
@@ -55,9 +53,9 @@ const DrawerStack = () => {
           title: ScreenNames.FavoritesScreen.title,
           drawerLabel: (props) => (
             <DrawerLabel
+              {...props}
               rightElement={(props) => <FavoriteCount {...props} />}
               title={ScreenNames.FavoritesScreen.title}
-              {...props}
               leftIcon={ScreenNames.FavoritesScreen.icon}
             />
           ),

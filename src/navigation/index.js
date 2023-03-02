@@ -3,11 +3,8 @@ import ScreenNames from '../constants/ScreenNames';
 
 //stacks
 import DrawerStack from './DrawerStack';
-
-//screens
 import DetailScreen from '../screens/DetailScreen';
 import { commonScreenOptions, detailScreenOptions } from './Config';
-import { MD2Colors } from 'react-native-paper';
 import BackButton from '../components/common/BackButton';
 
 const RootStack = createNativeStackNavigator();

@@ -1,6 +1,6 @@
 import React from 'react';
-import { ImageBackground, StyleSheet, View } from 'react-native';
-import { Text, ActivityIndicator, MD2Colors, IconButton } from 'react-native-paper';
+import { StyleSheet, View } from 'react-native';
+import { Text, ActivityIndicator, IconButton } from 'react-native-paper';
 import AppSizes from '../../constants/AppSizes';
 import Globals from '../../constants/Globals';
 

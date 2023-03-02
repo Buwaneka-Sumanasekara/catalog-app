@@ -1,6 +1,5 @@
-import { ImageBackground, StyleSheet, View } from 'react-native';
-import { Searchbar, MD2Colors, Chip, IconButton } from 'react-native-paper';
-import LinearGradient from 'react-native-linear-gradient';
+import { StyleSheet, View } from 'react-native';
+import { Searchbar, MD2Colors } from 'react-native-paper';
 import Globals from '../../constants/Globals';
 import { useEffect, useRef, useState } from 'react';
 import { useDebounce } from '../../hooks/useFetchCommon';
