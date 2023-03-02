@@ -1,10 +1,6 @@
 import Globals from '../constants/Globals';
 import ScreenNames from '../constants/ScreenNames';
 
-function removeDuplicatesFromArray(ar, key = '') {
-  return [...new Map(ar.map((x) => [key, x])).values()];
-}
-
 function removeItemFromArray(ar, item, key = '') {
   return ar.filter((v) => v[key] !== item[key]);
 }
@@ -27,7 +23,7 @@ function getAnimeStatusByScreenKey(screenKey) {
 
 const checkValueExistInArray = (value, ar = [], key = '') => {
   const found = ar.find((item) => value[key] === item[key]);
-  return found || false;
+  return !!found || false;
 };
 
 function getPaddings(columns, padding, index) {
@@ -58,10 +54,4 @@ function getPaddings(columns, padding, index) {
   return { paddingLeft, paddingRight, paddingTop, paddingBottom };
 }
 
-export {
-  removeDuplicatesFromArray,
-  removeItemFromArray,
-  getAnimeStatusByScreenKey,
-  checkValueExistInArray,
-  getPaddings,
-};
+export { removeItemFromArray, getAnimeStatusByScreenKey, checkValueExistInArray, getPaddings };
